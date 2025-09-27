@@ -1,4 +1,4 @@
-package com.codex.app;
+package com.codex;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,12 +1,32 @@
 package com.codex.customer.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
 @Builder
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Customer {
+  @Id
+  @SequenceGenerator(
+      name = "customer_id_sequence",
+      sequenceName = "customer_id_sequence",
+      allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_sequence")
   private Long id;
+
   private String firstName;
   private String lastName;
   private String email;

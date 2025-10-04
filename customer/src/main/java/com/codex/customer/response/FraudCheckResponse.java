@@ -1,4 +1,4 @@
-package com.codex.fraud.response;
+package com.codex.customer.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

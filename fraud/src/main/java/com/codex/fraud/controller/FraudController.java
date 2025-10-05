@@ -1,6 +1,6 @@
 package com.codex.fraud.controller;
 
-import com.codex.fraud.response.FraudCheckResponse;
+import com.codex.clients.fraud.response.FraudCheckResponse;
 import com.codex.fraud.service.FraudCheckHistoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,0 +1,43 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    preferIpAddress: 'true'
+  client:
+    register-with-eureka: 'true'
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: 'true'
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
+  application:
+    name: customer
+  datasource:
+    password: password
+    username: amrox
+    url: jdbc:postgresql://localhost:5432/customer
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 60000
+management:
+  tracing:
+    enabled: 'true'
+    sampling:
+      probability: '1.0'
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+server:
+  port: '0'
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'

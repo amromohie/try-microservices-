@@ -1,1 +1,7 @@
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\config\CustomerConfig.java
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\controller\CustomerController.java
 F:\github\micro-codex\customer\src\main\java\com\codex\customer\CustomerApplication.java
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\entity\Customer.java
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\repository\CustomerRepository.java
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\request\CustomerRegistrationRequest.java
+F:\github\micro-codex\customer\src\main\java\com\codex\customer\service\CustomerService.java

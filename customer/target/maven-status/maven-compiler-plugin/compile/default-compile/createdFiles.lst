@@ -1,1 +1,8 @@
+com\codex\customer\config\CustomerConfig.class
 com\codex\customer\CustomerApplication.class
+com\codex\customer\entity\Customer$CustomerBuilder.class
+com\codex\customer\entity\Customer.class
+com\codex\customer\repository\CustomerRepository.class
+com\codex\customer\controller\CustomerController.class
+com\codex\customer\service\CustomerService.class
+com\codex\customer\request\CustomerRegistrationRequest.class

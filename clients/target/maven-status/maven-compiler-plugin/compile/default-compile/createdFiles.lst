@@ -1,0 +1,5 @@
+com\codex\clients\fraud\response\FraudCheckResponse.class
+com\codex\clients\notification\request\NotificationRequest$NotificationRequestBuilder.class
+com\codex\clients\fraud\client\FraudClient.class
+com\codex\clients\notification\request\NotificationRequest.class
+com\codex\clients\notification\client\NotificationClient.class

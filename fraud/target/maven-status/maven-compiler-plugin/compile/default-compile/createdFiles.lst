@@ -1,0 +1,6 @@
+com\codex\fraud\entity\FraudCheckHistory.class
+com\codex\fraud\repository\FraudCheckHistoryRepository.class
+com\codex\fraud\controller\FraudController.class
+com\codex\fraud\service\FraudCheckHistoryService.class
+com\codex\fraud\FraudApplication.class
+com\codex\fraud\entity\FraudCheckHistory$FraudCheckHistoryBuilder.class

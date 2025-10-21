@@ -1,0 +1,45 @@
+package com.codex.notification.config;
+
+import lombok.Getter;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@Getter
+public class NotificationConfig {
+
+  @Value("${rabbitmq.exchanges.internal}")
+  private String internalExchange;
+  @Value("${rabbitmq.queues.notification}")
+  private String notificationQueue;
+  @Value("${rabbitmq.routing-keys.internal-notification}")
+  private String internalNotificationRoutingKey;
+
+
+  // to publish messages to the queue
+  @Bean
+  public TopicExchange interntalTopicExchange() {
+    return new TopicExchange(this.internalExchange);
+  }
+  //
+  @Bean
+  public Queue notificationQueue() {
+    return new Queue(this.notificationQueue, false);
+  }
+
+  // binding between exchange and queue
+  @Bean
+  public Binding internalToNotificationBinding() {
+    return BindingBuilder
+        .bind(this.notificationQueue())
+        .to(this.interntalTopicExchange())
+        .with(this.internalNotificationRoutingKey);
+  }
+
+}

@@ -1,0 +1,53 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    preferIpAddress: 'true'
+  client:
+    register-with-eureka: 'true'
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    fetch-registry: 'true'
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
+  application:
+    name: notification
+  datasource:
+    password: password
+    username: amrox
+    url: jdbc:postgresql://postgres:5432/notification
+  rabbitmq:
+    addresses: rabbitmq:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 60000
+management:
+  tracing:
+    enabled: 'true'
+    sampling:
+      probability: '1.0'
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+server:
+  port: 8082
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
+
+
+

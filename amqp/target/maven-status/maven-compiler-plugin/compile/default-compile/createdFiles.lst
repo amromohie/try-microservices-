@@ -1,0 +1,2 @@
+com\codex\amqp\config\AmqpConfig.class
+com\codex\amqp\config\RabbitMQMessageProducer.class

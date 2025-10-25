@@ -1,0 +1,37 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    preferIpAddress: 'true'
+  client:
+    register-with-eureka: 'true'
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    fetch-registry: 'true'
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
+  application:
+    name: fraud
+  datasource:
+    password: password
+    username: amrox
+    url: jdbc:postgresql://postgres:5432/fraud
+management:
+  tracing:
+    enabled: 'true'
+    sampling:
+      probability: '1.0'
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+server:
+  port: 8081
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'

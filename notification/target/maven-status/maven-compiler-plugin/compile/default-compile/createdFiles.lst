@@ -1,6 +1,8 @@
 com\codex\notification\repository\NotificationRepository.class
 com\codex\notification\NotificationApplication.class
+com\codex\notification\rabbitmq\NotificationConsumer.class
 com\codex\notification\entity\Notification.class
+com\codex\notification\config\NotificationConfig.class
 com\codex\notification\controller\NotificationController.class
 com\codex\notification\entity\Notification$NotificationBuilder.class
 com\codex\notification\service\NotificationService.class

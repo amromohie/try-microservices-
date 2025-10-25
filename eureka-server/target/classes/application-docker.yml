@@ -1,0 +1,20 @@
+eureka:
+  client:
+    fetch-registry: 'false'
+    register-with-eureka: 'false'
+spring:
+  application:
+    name: eureka-server
+management:
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+  tracing:
+    enabled: 'true'
+    sampling:
+      probability: '1.0'
+server:
+  port: '8761'
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'

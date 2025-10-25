@@ -1,5 +1,7 @@
-F:\github\micro-codex\notification\src\main\java\com\codex\notification\controller\NotificationController.java
 F:\github\micro-codex\notification\src\main\java\com\codex\notification\entity\Notification.java
 F:\github\micro-codex\notification\src\main\java\com\codex\notification\NotificationApplication.java
+F:\github\micro-codex\notification\src\main\java\com\codex\notification\controller\NotificationController.java
 F:\github\micro-codex\notification\src\main\java\com\codex\notification\repository\NotificationRepository.java
 F:\github\micro-codex\notification\src\main\java\com\codex\notification\service\NotificationService.java
+F:\github\micro-codex\notification\src\main\java\com\codex\notification\config\NotificationConfig.java
+F:\github\micro-codex\notification\src\main\java\com\codex\notification\rabbitmq\NotificationConsumer.java
